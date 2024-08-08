@@ -1,4 +1,5 @@
 # Script: BuildNetCoreWebApi.sh
+# Created at: 2024-08-08
 # Description: Builds and Pushes a Docker image for a .NET Core Web API project.
 
 #!/bin/bash
@@ -48,7 +49,7 @@ fi
 pushToRegistry=true
 
 echo "Checking if container registry is provided" >&2
-if [ "$registry" != ""]
+if [ "$registry" != "" ]
 then
     echo "Pushing to Container Registry" >&2
 
