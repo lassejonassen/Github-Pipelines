@@ -53,6 +53,7 @@ function Get-Shared() {
     done
 
     allShared=$(Get-JsonFromKeyValue --json "$json" --key "label" --value "Shared")
+    echo "All Shared Key-Value pairs was retrieved"
     echo "$allShared"
 }
 
