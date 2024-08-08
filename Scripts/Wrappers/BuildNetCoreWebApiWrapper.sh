@@ -1,6 +1,8 @@
 # Script: BuildNetCoreWebApiWrapper.sh
 # Description: Wrapper before building images.
 
+# TODO: Docker Registry does not get passed to the BuildNetCoreWebApi.sh script. Fix this issue.
+
 #!/bin/bash
 
 echo "Arguments:"
