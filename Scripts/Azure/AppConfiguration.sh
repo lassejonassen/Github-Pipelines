@@ -24,7 +24,7 @@ function Get-AppConfiguration() {
     done
 
     echo "Getting Azure App Configuration"
-    configuration=$(az appconfig kv list --connection-string "$connectionString")
+    configuration=$(az appconfig kv list --connection-string "$connectionString" --all)
 
     echo "$configuration"
 }
