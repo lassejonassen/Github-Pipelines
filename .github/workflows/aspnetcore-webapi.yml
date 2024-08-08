@@ -1,4 +1,4 @@
-name: "ASP.NET Core Web API Workflow"
+name: 'ASP.NET Core Web API Workflow'
 on:
   workflow_call:
     inputs:
@@ -6,9 +6,6 @@ on:
         required: true
         type: string
       containerName:
-        required: true
-        type: string
-      azAppConfiguration:
         required: true
         type: string
 jobs:
@@ -22,6 +19,4 @@ jobs:
         uses: lassejonassen/GitHub-Pipelines/Github/Actions/Build/ASPNETCore@master
         with:
           containerName: ${{ inputs.containerName }}
-          azAppConfig: ${{ inputs.azAppConfiguration }}
-         
-        
+          azAppConfig: ${{ secrets.azAppConfiguration }}
