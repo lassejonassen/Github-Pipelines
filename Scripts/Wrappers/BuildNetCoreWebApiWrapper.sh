@@ -50,7 +50,7 @@ allShared=$(Get-Shared --json "$configuration")
 
 dockerValues=$(Get-DockerRegistryValues --json "$allShared")
 
-echo "Docker values: $dockerValues" >&2
+# echo "Docker values: $dockerValues" >&2
 
 dockerRegistry=$(echo "$dockerValues" | grep "dockerRegistry" | awk -F '=' '{print $2}')
 dockerRegistryUsername=$(echo "$dockerValues" | grep "dockerRegistryUsername" | awk -F '=' '{print $2}')
