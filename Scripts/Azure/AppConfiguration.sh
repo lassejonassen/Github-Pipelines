@@ -4,7 +4,7 @@
 #!/bin/bash
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-echo "path $SCRIPT_PATH"
+# echo "path $SCRIPT_PATH"
 
 parent=$(dirname "$SCRIPT_PATH")
 baseDir=$(realpath "$parent")

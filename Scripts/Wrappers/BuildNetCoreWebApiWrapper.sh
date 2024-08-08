@@ -3,7 +3,7 @@
 
 #!/bin/bash
 
-echo "Arguments:"
+echo "BuildNetCoreWebApiWrapper - Arguments:"
 echo "$@"
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -56,7 +56,6 @@ dockerRegistry=$(echo "$dockerValues" | grep "dockerRegistry" | awk -F '=' '{pri
 dockerRegistryUsername=$(echo "$dockerValues" | grep "dockerRegistryUsername" | awk -F '=' '{print $2}')
 dockerRegistryPassword=$(echo "$dockerValues" | grep "dockerRegistryPassword" | awk -F '=' '{print $2}')
 
-echo "\n\n Calling BuildNetCoreWebApi.sh\n\n"
 containerInfo=$("$baseDir/Build/BuildNetCoreWebApi.sh" -s "$codeSource" -v "$version" -r "$dockerRegistry" -c "$containerName" -u "$dockerRegistryUsername" -p "$dockerRegistryPassword" -rc "$runCount")
 if [ $? -ne 0 ]; then
     echo "Failed to build the containers"

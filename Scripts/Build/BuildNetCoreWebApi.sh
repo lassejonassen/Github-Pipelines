@@ -5,7 +5,7 @@
 #!/bin/bash
 set -e
 
-echo "Arguments:"
+echo "BuildNetCoreWebApi - Arguments:"
 echo "$@"
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
