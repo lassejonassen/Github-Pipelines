@@ -1,1 +1,13 @@
 name: 'Build ASP.NET Core'
+description: 'Building image for ASP.NET Core'
+inputs:
+  containerName:
+    description: 'Name of the container'
+    required: true
+  azAppConfig:
+    description: 'Azure App Configuration'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: 
