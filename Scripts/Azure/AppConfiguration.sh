@@ -39,6 +39,8 @@ function Get-AppConfiguration() {
 }
 
 function Get-Shared() {
+    echo "Getting all Key-Value apairs with label: Shared"
+    
     json=""
     
     while [ $# -gt 0 ]
