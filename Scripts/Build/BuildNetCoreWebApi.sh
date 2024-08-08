@@ -27,7 +27,8 @@ registryPassword=""
 runCount=1
 
 # Read the Argument values
-while [[ "$#" -gt 0 ]]; do
+while [ $# -gt 0 ]
+do
     case $1 in
         -s|--source) source="$2"; shift ;;
         -v|--version) version="$2"; shift ;;
