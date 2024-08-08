@@ -56,8 +56,7 @@ dockerRegistry=$(echo "$dockerValues" | grep "dockerRegistry" | awk -F '=' '{pri
 dockerRegistryUsername=$(echo "$dockerValues" | grep "dockerRegistryUsername" | awk -F '=' '{print $2}')
 dockerRegistryPassword=$(echo "$dockerValues" | grep "dockerRegistryPassword" | awk -F '=' '{print $2}')
 
-
-containerInfo=$("$baseDir/Build/BuildNetCoreWebApi.sh" -s "$codeSource" -v "$version" -r "$dockerRegistry" -c  "$containerName" -u "$dockerRegistryUsername" -p "$dockerRegistryPassword" -rc "$runCount")
+containerInfo=$("$baseDir/Build/BuildNetCoreWebApi.sh" -s "$codeSource" -v "$version" -r "$dockerRegistry" -c "$containerName" -u "$dockerRegistryUsername" -p "$dockerRegistryPassword" -rc "$runCount")
 if [ $? -ne 0 ]; then
     echo "Failed to build the containers"
     exit $?

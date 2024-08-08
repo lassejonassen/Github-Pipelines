@@ -42,9 +42,18 @@ do
     shift
 done
 
+echo "source: $source"
+echo "version: $version"
+echo "registry: $registry"
+echo "containerName: $containerName"
+echo "registryUsername: $registryUsername"
+echo "registryPassword: $registryPassword"
+echo "runCount: $runCount"
+
+
 baseSourceDir=$source
-if [ -d "@$source/src" ]; then
-    source="$source7src"
+if [ -d "$source/src" ]; then
+    source="$source/src"
 fi
 
 pushToRegistry=true
