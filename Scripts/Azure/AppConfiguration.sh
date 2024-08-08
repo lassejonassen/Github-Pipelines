@@ -31,8 +31,8 @@ function Get-AppConfiguration() {
 
     # az login --service-principal -u "$servicePrincipal" -p "$servicePrincipalPassword" --tenant "$tenantId"
 
-    echo "Getting Azure App Configuration"
-    echo "Azure App Configuration ConnectionString: $connectionString"
+    echo "Getting Azure App Configuration" >&2
+    echo "Azure App Configuration ConnectionString: $connectionString" >&2
     configuration=$(az appconfig kv list --all --connection-string "$connectionString")
 
     echo "$configuration"
@@ -53,7 +53,7 @@ function Get-Shared() {
     done
 
     allShared=$(Get-JsonFromKeyValue --json "$json" --key "label" --value "Shared")
-    echo "All Shared Key-Value pairs was retrieved"
+    echo "All Shared Key-Value pairs was retrieved" >&2
     echo "$allShared"
 }
 
@@ -70,11 +70,11 @@ function Get-DockerRegistryValues() {
     done
 
     dockerRegistry=$(Get-JsonPropertryFromKey --json "$json" --key "key" --value "Docker-Registry"  --property "value")
-    echo "dockerRegistry=$dockerRegistry"    
+    echo "dockerRegistry=$dockerRegistry" >&2
 
     dockerRegistryUsername=$(Get-JsonPropertryFromKey --json "$json" --key "key" --value "Docker-Username"  --property "value")
-    echo "dockerRegistryUsername=$dockerRegistryUsername"    
+    echo "dockerRegistryUsername=$dockerRegistryUsername" >&2
 
     dockerRegistryPassword=$(Get-JsonPropertryFromKey --json "$json" --key "key" --value "Docker-Password"  --property "value")
-    echo "dockerRegistryPassword=$dockerRegistryPassword"   
+    echo "dockerRegistryPassword=$dockerRegistryPassword" >&2
 }

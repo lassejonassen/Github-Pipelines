@@ -17,8 +17,7 @@ function Get-JsonFromKeyValue() {
          shift;
     done
 
-    value=$(echo "$json" | jq -r '[.[] | select(."'"$key"'"=="'"$value"'")]')
-    echo "After getting values"
+    value=$(echo "$json" | jq -r --arg value "$value" '[.[] | select(."'"$key"'"==$value)]')
     echo "$value"
 }
 
