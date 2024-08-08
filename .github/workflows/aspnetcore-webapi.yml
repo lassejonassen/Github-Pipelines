@@ -19,4 +19,4 @@ jobs:
         uses: lassejonassen/GitHub-Pipelines/Github/Actions/Build/ASPNETCore@master
         with:
           containerName: ${{ inputs.containerName }}
-          azAppConfig: ${{ secrets.azAppConfiguration }}
+          azAppConfig: ${{ secrets.DEV_AZ_APP_CONFIGURATION }}
