@@ -44,8 +44,6 @@ if [ $? -ne 0 ]; then
     exit $?
 fi
 
-echo "Configuration: $configuration" >&2
-
 allShared=$(Get-Shared --json "$configuration")
 
 echo "All shared $allShared" >&2

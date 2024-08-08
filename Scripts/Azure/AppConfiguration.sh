@@ -40,10 +40,10 @@ function Get-AppConfiguration() {
 
 function Get-Shared() {
     json=""
-
+    
     while [ $# -gt 0 ]
     do
-        case "$1" in
+         case "$1" in
               -j|--json) json="$2"; shift;;
               --) shift;;
          esac
