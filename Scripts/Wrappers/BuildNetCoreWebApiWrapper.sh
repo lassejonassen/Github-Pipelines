@@ -15,7 +15,7 @@ baseDir=$(realpath "$parent")
 echo "path $SCRIPT_PATH"
 echo "scriptBase $baseDir"
 
-source "$baseDir/Azure/AzureAppConfig.sh"
+source "$baseDir/Azure/AppConfiguration.sh"
 
 codeSource=""
 runCount=""
