@@ -3,8 +3,8 @@
 # Description: Builds and Pushes a Docker image for a .NET Core Web API project.
 
 #!/bin/bash
-echo "===================="
-echo "BuildNetCoreWebApi.sh"
+echo "========================================"
+echo "BuildNetCoreWebApi.sh - Start"
 
 set -e
 
@@ -190,3 +190,6 @@ echo ls $baseSourceDir >&2
 echo ls $baseSourceDir/config >&2
 
 echo "containerVersion=$buildVersion"
+
+echo "BuildNetCoreWebApi.sh - End"
+echo "========================================"
