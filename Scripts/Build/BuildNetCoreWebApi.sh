@@ -49,9 +49,12 @@ fi
 pushToRegistry=true
 
 echo "Checking if container registry is provided" >&2
+echo "Registry: $registry" >&2
 if [ "$registry" != "" ]
 then
     echo "Pushing to Container Registry" >&2
+    echo "Username: $registryUsername" >&2
+    echo "Password: $registryPassword" >&2
 
     if [ "$registryUsername" = "" ]
      then
