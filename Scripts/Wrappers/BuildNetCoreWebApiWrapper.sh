@@ -36,9 +36,8 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-
+$azAppConfiguration="Endpoint=https://app-configuration-de-001.azconfig.io;Id=qdel;Secret=CjZxE0ofzR7HF6loSW86dXGUzSltGGGT7HLjlBpetZdFQNLH65cXJQQJ99AHAC5RqLJ3jBxrAAABAZAChXy5"
 echo "Getting Azure AppConfiguration"
-echo "Azure App Configuration ConnectionString: $azAppConfiguration"
 configuration=$(Get-AppConfiguration --connectionString "$azAppConfiguration")
 if [ $? -ne 0 ]; then
     echo "Failed to get configuration"
