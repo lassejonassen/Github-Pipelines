@@ -32,7 +32,7 @@ function Get-AppConfiguration() {
     # az login --service-principal -u "$servicePrincipal" -p "$servicePrincipalPassword" --tenant "$tenantId"
 
     echo "Getting Azure App Configuration"
-    echo "$connectionString"
+    echo "Azure App Configuration ConnectionString: $connectionString"
     configuration=$(az appconfig kv list --all --connection-string "$connectionString")
 
     echo "$configuration"
