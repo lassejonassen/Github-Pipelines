@@ -50,11 +50,11 @@ dockerValues=$(Get-DockerRegistryValues --json "$allShared")
 
 # echo "Docker values: $dockerValues" >&2
 
-dockerRegistry=$(echo "$dockerValues" | grep "dockerRegistry" | awk -F '=' '{print $2}') > /dev/null 2>&1
-dockerRegistryUsername=$(echo "$dockerValues" | grep "dockerRegistryUsername" | awk -F '=' '{print $2}') > /dev/null 2>&1
-dockerRegistryPassword=$(echo "$dockerValues" | grep "dockerRegistryPassword" | awk -F '=' '{print $2}') > /dev/null 2>&1
+dockerRegistry=$(echo "$dockerValues" | grep "dockerRegistry" | awk -F '=' '{print $2}')
+dockerRegistryUsername=$(echo "$dockerValues" | grep "dockerRegistryUsername" | awk -F '=' '{print $2}')
+dockerRegistryPassword=$(echo "$dockerValues" | grep "dockerRegistryPassword" | awk -F '=' '{print $2}')
 
-containerInfo=$("$baseDir/Build/BuildNetCoreWebApi.sh" -s "$codeSource" -v "$version" -r "$dockerRegistry" -c "$containerName" -u "$dockerRegistryUsername" -p "$dockerRegistryPassword" -rc "$runCount")
+containerInfo=$("$baseDir/Build/BuildNetCoreWebApi.sh" -s "$codeSource" -v "$version" --registry "$dockerRegistry" -c "$containerName" -u "$dockerRegistryUsername" -p "$dockerRegistryPassword" -rc "$runCount")
 if [ $? -ne 0 ]; then
     echo "Failed to build the containers"
     exit $?
