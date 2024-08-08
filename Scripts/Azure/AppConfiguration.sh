@@ -13,18 +13,27 @@ source "$baseDir/Json/JsonHelper.sh"
 
 function Get-AppConfiguration() {
     connectionString=""
+    servicePrincipal=""
+    servicePrincipalPassword=""
+    tenantId=""
 
     while [ $# -gt 0 ]
     do
         case "$1" in
-              -cs|--connectionString) connectionString="$2"; shift;;        
-              --) shift;;
+            -t|--tenantId) tenant="$2"; shift;;
+            -sp|--servicePrincipal) servicePrincipal="$2"; shift;;
+            -spp|--servicePrincipalPassword) servicePrincipalPassword="$2"; shift;;
+            -cs|--connectionString) connectionString="$2"; shift;;        
+            --) shift;;
          esac
          shift;
     done
 
+    # az login --service-principal -u "$servicePrincipal" -p "$servicePrincipalPassword" --tenant "$tenantId"
+
     echo "Getting Azure App Configuration"
-    configuration=$(az appconfig kv list --all --connection-string "$connectionString" -n "app-configuration-de-001")
+    echo "$connectionString"
+    configuration=$(az appconfig kv list --all --connection-string "$connectionString")
 
     echo "$configuration"
 }
