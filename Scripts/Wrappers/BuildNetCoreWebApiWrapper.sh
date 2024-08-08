@@ -3,6 +3,8 @@
 
 #!/bin/bash
 
+echo "\n\nRunning BuildNetCoreWebApiWrapper.sh\n\n"
+
 echo "Arguments:"
 echo "$@"
 
@@ -56,6 +58,7 @@ dockerRegistry=$(echo "$dockerValues" | grep "dockerRegistry" | awk -F '=' '{pri
 dockerRegistryUsername=$(echo "$dockerValues" | grep "dockerRegistryUsername" | awk -F '=' '{print $2}')
 dockerRegistryPassword=$(echo "$dockerValues" | grep "dockerRegistryPassword" | awk -F '=' '{print $2}')
 
+echo "\n\n Calling BuildNetCoreWebApi.sh\n\n"
 containerInfo=$("$baseDir/Build/BuildNetCoreWebApi.sh" -s "$codeSource" -v "$version" -r "$dockerRegistry" -c "$containerName" -u "$dockerRegistryUsername" -p "$dockerRegistryPassword" -rc "$runCount")
 if [ $? -ne 0 ]; then
     echo "Failed to build the containers"
