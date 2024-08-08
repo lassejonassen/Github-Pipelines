@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${GITHUB_ACTION_PATH}/../../../Scripts/Wrappers/BuildNetCoreWebApiWrapper.sh --runCount ${GITHUB_RUN_ATTEMPT} --source ${GITHUB_WORKSPACE} --version ${GITHUB_RUN_NUMBER} --containerName ${{ inputs.containerName }} --azAppConfiguration ${{ inputs.azAppConfig }}
+    - run: ${GITHUB_ACTION_PATH}/../../../../Scripts/Wrappers/BuildNetCoreWebApiWrapper.sh --runCount ${GITHUB_RUN_ATTEMPT} --source ${GITHUB_WORKSPACE} --version ${GITHUB_RUN_NUMBER} --containerName ${{ inputs.containerName }} --azAppConfiguration ${{ inputs.azAppConfig }}
       shell: bash
     - name: "Save Container Version"
       uses: actions/upload-artifact@v3
