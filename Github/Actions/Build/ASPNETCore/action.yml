@@ -10,4 +10,15 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: 
+    - run: ${GITHUB_ACTION_PATH}/../../../Scripts/Wrappers/BuildNetCoreWebApiWrapper.sh --runCount ${GITHUB_RUN_ATTEMPT} --source ${GITHUB_WORKSPACE} --version ${GITHUB_RUN_NUMBER} --containerName ${{ inputs.containerName }} --azAppConfiguration ${{ inputs.azAppConfig }}
+      shell: bash
+    - name: "Save Container Version"
+      uses: actions/upload-artifact@v3
+      with:
+        name: Build_ContainerVersion
+        path: version.txt
+    - name: Save appsettings.json as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Build_AppSettings
+        path: Config/appsettings.json
