@@ -3,7 +3,12 @@
 
 #!/bin/bash
 
-echo "BuildNetCoreWebApiWrapper - Arguments:"
+echo "===================="
+echo "BuildNetCoreWebApiWrapper.sh"
+
+
+
+echo "Arguments:"
 echo "$@"
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"

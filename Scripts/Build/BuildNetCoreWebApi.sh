@@ -3,9 +3,12 @@
 # Description: Builds and Pushes a Docker image for a .NET Core Web API project.
 
 #!/bin/bash
+echo "===================="
+echo "BuildNetCoreWebApi.sh"
+
 set -e
 
-echo "BuildNetCoreWebApi - Arguments:"
+echo "Arguments:"
 echo "$@"
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
