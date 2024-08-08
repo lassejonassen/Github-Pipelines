@@ -3,8 +3,8 @@
 
 #!/bin/bash
 
-echo "===================="
-echo "BuildNetCoreWebApiWrapper.sh"
+echo "========================================"
+echo "BuildNetCoreWebApiWrapper.sh - Start"
 
 
 
@@ -70,3 +70,6 @@ fi
 containerversion=$(echo "$containerInfo" | grep "containerversion=" | awk -F '=' '{print $2}')
 echo "Saving version info to files. Container: $containerversion" >&2
 echo "$containerversion" > "version.txt"
+
+echo "BuildNetCoreWebApiWrapper.sh - End"
+echo "========================================"
