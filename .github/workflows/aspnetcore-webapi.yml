@@ -8,6 +8,9 @@ on:
       containerName:
         required: true
         type: string
+      azAppConfig:
+        required: true
+        type: string
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -19,4 +22,4 @@ jobs:
         uses: lassejonassen/GitHub-Pipelines/Github/Actions/Build/ASPNETCore@master
         with:
           containerName: ${{ inputs.containerName }}
-          azAppConfig: ${{ secrets.DEV_AZ_APP_CONFIGURATION }}
+          azAppConfig: ${{ inputs.azAppConfig }}
