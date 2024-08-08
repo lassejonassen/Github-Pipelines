@@ -14,7 +14,7 @@ source "$baseDir/Json/JsonHelper.sh"
 function Get-AppConfiguration() {
     connectionString=""
 
-    while [ $# -gt 0]
+    while [ $# -gt 0 ]
     do
         case "$1" in
               -cs|--connectionString) connectionString="$2"; shift;;        
@@ -32,7 +32,7 @@ function Get-AppConfiguration() {
 function Get-Shared() {
     json=""
 
-    while [ $# -gt 0]
+    while [ $# -gt 0 ]
     do
         case "$1" in
               -j|--json) json="$2"; shift;;
