@@ -43,7 +43,7 @@ function Get-JsonFromKeyValueLike() {
     echo "$value"
 }
 
-function Get-JsonPropertryFromKey() {
+function Get-JsonPropertyFromKey() {
     json=""
     key=""
     value=""
