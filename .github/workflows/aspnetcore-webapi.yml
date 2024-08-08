@@ -1,0 +1,27 @@
+name: "ASP.NET Core Web API Workflow"
+on:
+  workflow_call:
+    inputs:
+      pipelineName:
+        required: true
+        type: string
+      containerName:
+        required: true
+        type: string
+      azAppConfiguration:
+        required: true
+        type: string
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    environment: Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        uses: lassejonassen/GitHub-Pipelines/Github/Actions/Build/ASPNETCore@master
+        with:
+          containerName: ${{ inputs.containerName }}
+          azAppConfig: ${{ inputs.azAppConfiguration }}
+         
+        
