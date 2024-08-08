@@ -3,19 +3,17 @@
 
 #!/bin/bash
 
-echo "\n\nRunning BuildNetCoreWebApiWrapper.sh\n\n"
-
 echo "Arguments:"
 echo "$@"
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-echo "path $SCRIPT_PATH"
+# echo "path $SCRIPT_PATH"
 
 parent=$(dirname "$SCRIPT_PATH")
 baseDir=$(realpath "$parent")
 
-echo "path $SCRIPT_PATH"
-echo "scriptBase $baseDir"
+# echo "path $SCRIPT_PATH"
+# echo "scriptBase $baseDir"
 
 source "$baseDir/Azure/AppConfiguration.sh"
 
