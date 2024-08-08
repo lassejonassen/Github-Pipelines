@@ -5,7 +5,7 @@
 #!/bin/bash
 set -e
 
-echo "\n\nRunning BuildNetCoreWebApi.sh\n\n"
+echo -e '\n\n Running BuildNetCoreWebApi.sh \n\n'
 
 echo "Arguments:"
 echo "$@"
